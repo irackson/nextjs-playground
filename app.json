@@ -11,19 +11,19 @@
 	"env": {
 		"DATABASE_URL": {
 			"description": "The URL for the database",
-			"required": true
+			"required": false
 		},
 		"NEXTAUTH_SECRET": {
 			"description": "The secret for NextAuth",
-			"required": true
+			"required": false
 		},
 		"NEXTAUTH_URL": {
 			"description": "The URL for NextAuth",
-			"required": true
+			"required": false
 		},
 		"NEXT_PUBLIC_API_URL": {
 			"description": "The URL for the API",
-			"required": true
+			"required": false
 		}
 	},
 	"formation": {
