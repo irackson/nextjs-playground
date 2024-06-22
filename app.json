@@ -11,19 +11,33 @@
 	"env": {
 		"DATABASE_URL": {
 			"description": "The URL for the database",
-			"required": false
+			"required": true,
+			"value": "https://example.com/"
+		},
+		"DISCORD_CLIENT_ID": {
+			"description": "The URL for the database",
+			"generator": "secret",
+			"required": true
+		},
+		"DISCORD_CLIENT_SECRET": {
+			"description": "The URL for the database",
+			"generator": "secret",
+			"required": true
+		},
+		"ENV_SOURCE": {
+			"description": "The URL for NextAuth",
+			"required": true,
+			"value": "from_app.json"
 		},
 		"NEXTAUTH_SECRET": {
 			"description": "The secret for NextAuth",
-			"required": false
+			"generator": "secret",
+			"required": true
 		},
 		"NEXTAUTH_URL": {
 			"description": "The URL for NextAuth",
-			"required": false
-		},
-		"NEXT_PUBLIC_API_URL": {
-			"description": "The URL for the API",
-			"required": false
+			"required": true,
+			"value": "https://example.com/"
 		}
 	},
 	"formation": {
