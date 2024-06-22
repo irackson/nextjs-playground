@@ -1,0 +1,37 @@
+{
+	"addons": [
+		"heroku-postgresql"
+	],
+	"buildpacks": [
+		{
+			"url": "heroku/nodejs"
+		}
+	],
+	"description": "A Next.js app created with create-t3-app",
+	"env": {
+		"DATABASE_URL": {
+			"description": "The URL for the database",
+			"required": true
+		},
+		"NEXTAUTH_SECRET": {
+			"description": "The secret for NextAuth",
+			"required": true
+		},
+		"NEXTAUTH_URL": {
+			"description": "The URL for NextAuth",
+			"required": true
+		},
+		"NEXT_PUBLIC_API_URL": {
+			"description": "The URL for the API",
+			"required": true
+		}
+	},
+	"formation": {
+		"web": {
+			"quantity": 1,
+			"size": "standard-1x"
+		}
+	},
+	"name": "nextjs-playground",
+	"scripts": {}
+}
