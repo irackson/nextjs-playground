@@ -54,8 +54,5 @@
 			"size": "basic"
 		}
 	},
-	"name": "nextjs-playground",
-	"scripts": {
-		"test": "npx playwright test"
-	}
+	"name": "nextjs-playground"
 }
