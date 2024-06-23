@@ -31,6 +31,7 @@ const config = {
   },
   experimental: {
     optimizePackageImports: [],
+    instrumentationHook: true,
   },
   /**
    * If you have the "experimental: { appDir: true }" setting enabled, then you

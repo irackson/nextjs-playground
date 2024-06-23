@@ -3,7 +3,8 @@
     "types": [
       "node",
       "webpack",
-      "webpack-env"
+      "webpack-env",
+      "@vercel/otel"
     ],
     "target": "ES2019",
     "lib": [
@@ -45,6 +46,12 @@
     "strictFunctionTypes": true,
     "useDefineForClassFields": true,
     "plugins": [
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "goToDefinition": true
+        }
+      },
       {
         "name": "next"
       }
