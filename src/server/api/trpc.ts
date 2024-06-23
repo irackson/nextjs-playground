@@ -13,6 +13,25 @@ import { ZodError } from "zod";
 
 import { getServerAuthSession } from "homedeveloper/server/auth";
 import { db } from "homedeveloper/server/db";
+import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
+import { type Session } from "next-auth";
+
+/** Options when creating a context for tRPC calls */
+interface AppInnerContextOptions extends Partial<CreateNextContextOptions> {
+  session: Session | null;
+}
+
+/**
+ * This helper generates the "internals" for a tRPC context. We're using it to define
+ * application-specific and request-specific variables, such as the security role assigned
+ * to the current logged on user.
+ *
+ */
+export const createInnerTRPCContext = (opts?: AppInnerContextOptions) => {
+  return {
+    session: opts?.session ?? null,
+  };
+};
 
 /**
  * 1. CONTEXT

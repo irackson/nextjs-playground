@@ -40,12 +40,22 @@
 			"value": "https://example.com/"
 		}
 	},
+	"environments": {
+		"test": {
+			"scripts": {
+				"test": "npx playwright test",
+				"test-setup": "next lint"
+			}
+		}
+	},
 	"formation": {
 		"web": {
 			"quantity": 1,
-			"size": "standard-1x"
+			"size": "basic"
 		}
 	},
 	"name": "nextjs-playground",
-	"scripts": {}
+	"scripts": {
+		"test": "npx playwright test"
+	}
 }
