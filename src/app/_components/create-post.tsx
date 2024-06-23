@@ -19,6 +19,8 @@ export function CreatePost() {
   return (
     <form
       onSubmit={(e) => {
+        console.log("e", e);
+        console.log("hi");
         e.preventDefault();
         createPost.mutate({ name });
       }}

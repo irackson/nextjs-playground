@@ -6,30 +6,39 @@
 			"type": "node-terminal",
 			"request": "launch",
 			"command": "npm run dev",
-			// "preLaunchTask": "Launch Chrome with Debugging",
 			"serverReadyAction": {
 				"pattern": "- Local:.+(https?://.+)",
-				"uriFormat": "%s",
-				"action": "debugWithChrome"
-			}
+				"action": "startDebugging",
+				"name": "OPEN_CHROME",
+			},
+			"trace": false,
+			"sourceMaps": true,
+			"smartStep": true,
+			"skipFiles": [
+				"node_modules/**"
+			],
+			"postDebugTask": "KILL_CHROME"
 		},
 		{
-			"name": "Launch Chrome with Debugging",
+			"name": "OPEN_CHROME",
 			"type": "chrome",
 			"request": "launch",
 			"url": "http://localhost:3000",
 			"webRoot": "${workspaceFolder}",
 			"runtimeArgs": [
-				"--remote-debugging-port=9222",
-				"--disable-session-crashed-bubble",
-				"--user-data-dir=${workspaceFolder}/chrome-debug-profile"
+				"--disable-session-restore",
+				"--profile-directory=Debug",
+				"--user-data-dir=${workspaceFolder}/chrome-debug-profile",
+				"--no-first-run",
+				"--new-window"
 			],
-			"trace": true, // Enable tracing to capture console logs
+			"trace": false,
 			"sourceMaps": true,
 			"smartStep": true,
 			"skipFiles": [
 				"node_modules/**"
-			]
-		}
-	]
+			],
+			"postDebugTask": "KILL_CHROME"
+		},
+	],
 }

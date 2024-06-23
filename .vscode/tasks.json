@@ -1,4 +1,19 @@
 {
 	"version": "2.0.0",
-	"tasks": []
+	"tasks": [
+		{
+			"label": "KILL_CHROME",
+			"type": "shell",
+			"command": "${input:terminate}",
+			"problemMatcher": []
+		}
+	],
+	"inputs": [
+		{
+			"id": "terminate",
+			"type": "command",
+			"command": "workbench.action.debug.stop",
+			"args": {}
+		}
+	]
 }
