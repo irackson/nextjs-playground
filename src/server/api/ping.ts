@@ -9,6 +9,7 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<PingResponse>,
 ) {
-  res.status(200).json({ status: "Success", message: "pong" });
+  // res.status(200).json({ status: "Success", message: "pong" });
+  console.log("I RAN");
   return;
 }
