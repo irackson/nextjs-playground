@@ -1,12 +1,10 @@
 {
   "compilerOptions": {
-    "compilerOptions": {
-      "types": [
-        "node",
-        "webpack",
-        "webpack-env"
-      ]
-    },
+    "types": [
+      "node",
+      "webpack",
+      "webpack-env"
+    ],
     "target": "ES2019",
     "lib": [
       "dom",
