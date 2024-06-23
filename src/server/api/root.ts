@@ -1,5 +1,8 @@
 import { postRouter } from "homedeveloper/server/api/routers/post";
-import { createCallerFactory, createTRPCRouter } from "homedeveloper/server/api/trpc";
+import {
+  createCallerFactory,
+  createTRPCRouter,
+} from "homedeveloper/server/api/trpc";
 
 /**
  * This is the primary router for your server.

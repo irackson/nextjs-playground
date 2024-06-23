@@ -24,6 +24,7 @@ const config = {
   compiler: {
     // Enables the styled-components SWC transform
     styledComponents: true,
+    removeConsole: false,
   },
   eslint: {
     ignoreDuringBuilds: false,
@@ -78,6 +79,7 @@ const config = {
    * @type {NonNullable<NextConfig['webpack']>}
    * * @typedef {Object} WebpackCustomConfig
    * @property {string} devtool - The type of source map to generate.
+   * @property {any} module - The type of source map to generate.
    * @param {WebpackCustomConfig} config - The Webpack configuration.
    */
   webpack: (
@@ -93,7 +95,14 @@ const config = {
     // // console.log({ config });
     // return config;
     if (dev) {
-      config.devtool = "source-map";
+      // config.devtool = "source-map";
+      console.log("hi from config");
+
+      // @ts-expect-error does not work work
+      config.ignoreWarnings = [
+        /Failed to parse source map/,
+        /Could not read source map for file/,
+      ];
     }
     return config;
   },
