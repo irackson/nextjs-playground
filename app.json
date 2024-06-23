@@ -41,17 +41,25 @@
 		}
 	},
 	"environments": {
+		"formation": {
+			"test": {
+				"quantity": 1,
+				"size": "basic"
+			},
+			"test-setup": {
+				"quantity": 1,
+				"size": "basic"
+			},
+			"web": {
+				"quantity": 1,
+				"size": "basic"
+			}
+		},
 		"test": {
 			"scripts": {
 				"test": "npx playwright test",
 				"test-setup": "next lint"
 			}
-		}
-	},
-	"formation": {
-		"web": {
-			"quantity": 1,
-			"size": "basic"
 		}
 	},
 	"name": "nextjs-playground"
