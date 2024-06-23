@@ -1,0 +1,35 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "DEBUG",
+			"type": "node-terminal",
+			"request": "launch",
+			"command": "npm run dev",
+			// "preLaunchTask": "Launch Chrome with Debugging",
+			"serverReadyAction": {
+				"pattern": "- Local:.+(https?://.+)",
+				"uriFormat": "%s",
+				"action": "debugWithChrome"
+			}
+		},
+		{
+			"name": "Launch Chrome with Debugging",
+			"type": "chrome",
+			"request": "launch",
+			"url": "http://localhost:3000",
+			"webRoot": "${workspaceFolder}",
+			"runtimeArgs": [
+				"--remote-debugging-port=9222",
+				"--disable-session-crashed-bubble",
+				"--user-data-dir=${workspaceFolder}/chrome-debug-profile"
+			],
+			"trace": true, // Enable tracing to capture console logs
+			"sourceMaps": true,
+			"smartStep": true,
+			"skipFiles": [
+				"node_modules/**"
+			]
+		}
+	]
+}

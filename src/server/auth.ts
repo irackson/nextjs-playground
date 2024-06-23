@@ -7,7 +7,7 @@ import {
 import { type Adapter } from "next-auth/adapters";
 import DiscordProvider from "next-auth/providers/discord";
 
-import { env } from "homedeveloper/env";
+import { env } from "homedeveloper/env.mjs";
 import { db } from "homedeveloper/server/db";
 
 /**

@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 
-import { env } from "homedeveloper/env";
+import { env } from "homedeveloper/env.mjs";
 
 const createPrismaClient = () =>
   new PrismaClient({
