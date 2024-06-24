@@ -99,7 +99,7 @@ const config = {
       // config.devtool = "source-map";
       console.log("hi from config");
 
-      // @ts-expect-error does not work work
+      // @ts-expect-error does not work
       config.ignoreWarnings = [
         /Failed to parse source map/,
         /Could not read source map for file/,

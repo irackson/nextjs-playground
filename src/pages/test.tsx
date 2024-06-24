@@ -24,11 +24,7 @@ export const MissingPage = () => {
       {/* a button that when clicked calls a function that console logs */}
       <button
         onClick={() => {
-          const x = 45;
-          const y = 55;
           console.log("Hello");
-          console.log(x + y);
-          console.log("yo");
         }}
       >
         Click me
