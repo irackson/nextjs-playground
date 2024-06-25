@@ -23,6 +23,7 @@ declare module "next-auth" {
       // ...other properties
       // role: UserRole;
     } & DefaultSession["user"];
+    isAdmin: boolean;
   }
 
   // interface User {
@@ -44,6 +45,7 @@ export const authOptions: NextAuthOptions = {
         ...session.user,
         id: user.id,
       },
+      isAdmin: session.user.name === "ian",
     }),
   },
   adapter: PrismaAdapter(db) as Adapter,

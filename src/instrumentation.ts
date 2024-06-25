@@ -2,7 +2,7 @@ import { registerOTel } from "@vercel/otel";
 import { diag, DiagConsoleLogger, DiagLogLevel } from "@opentelemetry/api";
 
 export function register() {
-  diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.ALL);
+  /* diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.ALL);
   registerOTel({
     serviceName: "nextjs-playground",
     // traceExporter: {
@@ -39,5 +39,5 @@ export function register() {
     //     return Promise.resolve();
     //   },
     // },
-  });
+  }); */
 }
