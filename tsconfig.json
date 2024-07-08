@@ -64,7 +64,9 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs",
-    ".next/types/**/*.ts"
+    "**/*.js",
+    ".next/types/**/*.ts",
+    "**/*.yml",
   ],
   "exclude": [
     "node_modules"

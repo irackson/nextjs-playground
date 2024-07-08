@@ -1,5 +1,5 @@
 import { createEnv } from "@t3-oss/env-nextjs";
-import { z } from "zod";
+import { z, ZodType } from "zod";
 
 export const env = createEnv({
   /**
@@ -9,7 +9,7 @@ export const env = createEnv({
   server: {
     PLAYGROUND_PRISMA_URL: z.string().url(),
     NODE_ENV: z
-      .enum(["development", "test", "production"])
+      .enum(["development", "test", "production", "CI"])
       .default("development"),
     NEXTAUTH_SECRET:
       process.env.NODE_ENV === "production"

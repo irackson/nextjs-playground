@@ -11,7 +11,21 @@ const config = {
     "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
   ],
+  overrides: [
+    {
+      files: ["**/.github/workflows/*.yml"],
+      plugins: ["yaml"],
+      extends: ["plugin:yaml/legacy"],
+    },
+  ],
   rules: {
+    "prefer-const": [
+      "error",
+      {
+        destructuring: "any",
+        ignoreReadBeforeAssign: false,
+      },
+    ],
     "@typescript-eslint/prefer-nullish-coalescing": "off",
     "@typescript-eslint/array-type": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
@@ -28,6 +42,7 @@ const config = {
         argsIgnorePattern: "^_",
       },
     ],
+
     "@typescript-eslint/require-await": "off",
     "@typescript-eslint/no-misused-promises": [
       "error",
@@ -38,5 +53,6 @@ const config = {
       },
     ],
   },
+  ignorePatterns: ["!.github"],
 };
 module.exports = config;

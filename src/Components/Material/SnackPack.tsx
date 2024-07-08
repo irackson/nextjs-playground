@@ -52,6 +52,9 @@ export default function ConsecutiveSnackbars({
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   handleClose: (event: React.SyntheticEvent | Event, reason?: string) => void;
 }) {
+  const x = 4;
+  const w = x + 2;
+
   const [messageInfo, setMessageInfo] = React.useState<
     SnackbarMessage | undefined
   >(undefined);
