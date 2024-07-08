@@ -6,7 +6,7 @@
       "webpack-env",
       "@vercel/otel"
     ],
-    "target": "ES2019",
+    "target": "ESNext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -67,7 +67,6 @@
     ".next/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    ".next"
+    "node_modules"
   ]
 }

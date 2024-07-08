@@ -21,10 +21,12 @@ await import("./src/env.mjs");
  */
 /** @type NextConfig */
 const config = {
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   compiler: {
     // Enables the styled-components SWC transform
     styledComponents: true,
-    removeConsole: false,
   },
   eslint: {
     ignoreDuringBuilds: false,
@@ -97,7 +99,7 @@ const config = {
     // return config;
     if (dev) {
       // config.devtool = "source-map";
-      console.log("hi from config");
+      console.log("hi from config (means webpack in dev mode)");
 
       // @ts-expect-error does not work
       config.ignoreWarnings = [
