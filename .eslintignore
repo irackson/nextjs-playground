@@ -1,0 +1,7 @@
+node_modules
+.next
+.swc
+chrome-debug-profile
+coverage
+playwright-report
+test-results

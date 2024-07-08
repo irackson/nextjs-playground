@@ -5,10 +5,12 @@ const config = {
   parserOptions: {
     project: true,
   },
+
   plugins: ["@typescript-eslint"],
   extends: [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended-type-checked",
+
     "plugin:@typescript-eslint/stylistic-type-checked",
   ],
   overrides: [
@@ -16,6 +18,7 @@ const config = {
       files: ["**/.github/workflows/*.yml"],
       plugins: ["yaml"],
       extends: ["plugin:yaml/legacy"],
+      rules: {},
     },
   ],
   rules: {
