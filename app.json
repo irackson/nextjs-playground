@@ -9,7 +9,7 @@
 	],
 	"description": "A Next.js app created with create-t3-app",
 	"env": {
-		"DATABASE_URL": {
+		"PLAYGROUND_PRISMA_URL": {
 			"description": "The URL for the database",
 			"required": true,
 			"value": "https://example.com/"

@@ -65,7 +65,7 @@ const config = {
     return [
       // {
       //   source: "/",
-      //   destination: "/dashboard",
+      //   destination: "/my_dashboard",
       //   permanent: true,
       // },
     ];
