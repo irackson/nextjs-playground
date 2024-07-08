@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PLAYGROUND_PRISMA_URL=${PLAYGROUND_PRISMA_URL}
+    volumes:
+      - .:/usr/src/app
+    stdin_open: true
+    tty: true
