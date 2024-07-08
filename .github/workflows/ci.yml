@@ -6,6 +6,10 @@ env:
   PLAYGROUND_PRISMA_URL: https://example.com/
   NODE_ENV: CI
   NEXTAUTH_SECRET: xyz
+  NEXTAUTH_URL: https://example.com/
+  DISCORD_CLIENT_ID: "123"
+  DISCORD_CLIENT_SECRET: "123"
+  ENV_SOURCE: ci.yml
 
 jobs:
   build:
