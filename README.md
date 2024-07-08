@@ -2,4 +2,4 @@
 
 ## DEPLOYMENT DETAILS
 
-> TODO
+> TODO add details
