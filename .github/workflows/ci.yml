@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 env:
   PLAYGROUND_PRISMA_URL: https://example.com/
-  NODE_ENV: CI
+  NODE_ENV: PRODUCTION
   NEXTAUTH_SECRET: xyz
   NEXTAUTH_URL: https://example.com/
   DISCORD_CLIENT_ID: "123"
