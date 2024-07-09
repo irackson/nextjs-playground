@@ -14,7 +14,8 @@
     "lint": "npx eslint .",
     "start": "next start",
     "test": "npx playwright test",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "docker": "docker stop prismahelper && docker compose down && docker compose --progress plain build --no-cache && docker compose up -d"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^1.6.0",
