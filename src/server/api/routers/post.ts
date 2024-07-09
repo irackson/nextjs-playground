@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { faker } from "@faker-js/faker";
 
 import {
   createTRPCRouter,
@@ -20,6 +21,12 @@ export const postRouter = createTRPCRouter({
     .mutation(async ({ ctx, input }) => {
       // simulate a slow db call
       await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      await ctx.db.tmpTest.create({
+        data: {
+          name: faker.person.firstName(),
+        },
+      });
 
       return ctx.db.post.create({
         data: {

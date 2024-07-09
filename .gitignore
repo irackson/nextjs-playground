@@ -47,4 +47,3 @@ chrome-debug-profile
 /test-results/
 /playwright-report/
 /playwright/.cache/
-.vscode/settings.json
