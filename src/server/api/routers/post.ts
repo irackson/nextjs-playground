@@ -22,11 +22,22 @@ export const postRouter = createTRPCRouter({
       // simulate a slow db call
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      await ctx.db.tmpTest.create({
-        data: {
-          name: faker.person.firstName(),
-        },
-      });
+      // await ctx.db.tmpTest.create({
+      //   data: {
+      //     name: faker.person.firstName(),
+      //     score: faker.number.float({ min: 0, max: 100 }),
+      //   },
+      // });
+      const tmpTests = await ctx.db.tmpTest.findMany();
+
+      // Update each record's score by subtracting 1
+      for (const test of tmpTests) {
+        await ctx.db.tmpTest.update({
+          where: { id: test.id },
+          // @ts-expect-error willfix
+          data: { score: test.score != null ? test.score - 1 : null },
+        });
+      }
 
       return ctx.db.post.create({
         data: {
