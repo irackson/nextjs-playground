@@ -12,8 +12,8 @@
     "start": "next start",
     "test": "npx playwright test",
     "typecheck": "tsc --noEmit",
-    "docker": "(docker stop prismahelper || true) && docker compose down && docker compose build --progress plain --no-cache && docker compose run --rm --service-ports prismahelper /bin/bash -c 'npx prisma migrate dev --name table_rename && /bin/bash'",
-    "postinstall": "if [ \"$(echo $NODE_ENV | tr '[:upper:]' '[:lower:]' | cut -c1-4)\" != \"prod\" ]; then sh postinstall.sh; fi"
+    "docker": "(docker stop prismahelper || true) && docker compose down && docker compose build --progress plain --no-cache && docker compose run --rm --service-ports prismahelper /bin/bash",
+    "postinstall": "if [ \"$(echo $NODE_ENV | tr '[:upper:]' '[:lower:]' | cut -c1-4)\" != \"prod\" ]; then (sh postinstall.sh || true); fi"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^1.6.0",
