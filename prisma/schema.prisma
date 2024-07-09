@@ -67,6 +67,7 @@ model User {
     accounts      Account[]
     sessions      Session[]
     posts         Post[]
+    TmpTest       TmpTest[]
 
     @@map("WEDDING_User")
 }
@@ -81,4 +82,21 @@ model VerificationToken {
 
     @@unique([identifier, token])
     @@map("WEDDING_VerificationToken")
+}
+
+model TmpTest {
+    id        Int       @id @default(autoincrement())
+    name      String?
+    createdAt DateTime? @default(now())
+    isActive  Boolean?  @default(true)
+    score     Float?
+
+    // Demonstrating relation
+    createdBy   User?   @relation(fields: [createdById], references: [id])
+    createdById String?
+
+    // Indexing
+    @@index([name])
+    @@index([createdAt])
+    @@map("WEDDING_TmpTest")
 }
