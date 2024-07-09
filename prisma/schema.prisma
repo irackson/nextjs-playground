@@ -24,6 +24,7 @@ model Post {
     createdById String
 
     @@index([name])
+    @@map("WEDDING_Post")
 }
 
 // Necessary for Next auth
@@ -44,6 +45,7 @@ model Account {
     refresh_token_expires_in Int?
 
     @@unique([provider, providerAccountId])
+    @@map("WEDDING_Account")
 }
 
 model Session {
@@ -52,6 +54,8 @@ model Session {
     userId       String
     expires      DateTime
     user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    @@map("WEDDING_Session")
 }
 
 model User {
@@ -63,12 +67,16 @@ model User {
     accounts      Account[]
     sessions      Session[]
     posts         Post[]
+
+    @@map("WEDDING_User")
 }
 
 model VerificationToken {
-    identifier String
-    token      String   @unique
-    expires    DateTime
+    identifier      String
+    token           String   @unique
+    expires         DateTime
+    expires_initial DateTime
 
     @@unique([identifier, token])
+    @@map("WEDDING_VerificationToken")
 }

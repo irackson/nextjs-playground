@@ -2,13 +2,16 @@ FROM node:20
 
 WORKDIR /usr/src/app
 
-COPY . .
+RUN echo "Contents before removing everything:" && ls -al
 
+RUN echo "Now removing everything..."
+RUN rm -rf /usr/src/app/* /usr/src/app/.* 2> /dev/null || true
+RUN echo "Contents after removing everything:" && ls -al
+
+COPY . .
 RUN echo "Contents after copying everything:" && ls -al
 
 RUN npm install
-
-RUN npx prisma generate
 
 EXPOSE 3000
 
