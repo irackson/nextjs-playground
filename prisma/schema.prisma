@@ -89,7 +89,7 @@ model TmpTest {
     name      String?
     createdAt DateTime? @default(now())
     isActive  Boolean?  @default(true)
-    // score     Float?
+    score     Float?
 
     // Demonstrating relation
     createdBy   User?   @relation(fields: [createdById], references: [id])
