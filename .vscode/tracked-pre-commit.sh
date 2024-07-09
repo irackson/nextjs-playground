@@ -4,4 +4,4 @@
 # Add the .gitkeep files to the staging area
 # git add -A .
 
-echo "xhello from pre-commit"
+echo "hello from pre-commit"
