@@ -76,6 +76,8 @@ model VerificationToken {
     token           String   @unique
     expires         DateTime
     expires_initial DateTime
+    test_string     String
+    test_string2    String
 
     @@unique([identifier, token])
     @@map("WEDDING_VerificationToken")
