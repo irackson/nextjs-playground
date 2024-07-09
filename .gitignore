@@ -46,4 +46,5 @@ chrome-debug-profile
 /playwright/.cache/
 
 # git
+.git
 !.git/hooks
