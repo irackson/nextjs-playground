@@ -44,8 +44,3 @@ chrome-debug-profile
 /test-results/
 /playwright-report/
 /playwright/.cache/
-
-# git
-.git
-!.git/hooks
-!.git/hooks/pre-commit
