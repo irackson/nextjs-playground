@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev --turbo",
-    "build": "next build",
+    "build": "npx prisma generate && next build",
     "prisma": "npx prisma migrate dev --name mig --create-only && npx prisma generate && npx prisma migrate deploy",
     "db:studio": "npx prisma studio",
     "lint": "npx eslint .",
