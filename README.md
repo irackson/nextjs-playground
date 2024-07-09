@@ -11,8 +11,10 @@
 To set up a NEW database, run `npx prisma migrate deploy` (runs through all migrations)
 
 1. Change schema.prisma
-2. Run `npx prisma migrate dev --name another_test --create-only` to generate migration file
-3. Run `npx prisma migrate deploy` to apply migration
-4. Run `npx prisma generate` to update client+typescript (can be used before/without running `npx prisma migrate deploy`, but doing so first can be dangerous as the types will be out of date with the database until migrate deploy is run)
+2. Run `npx prisma migrate dev --name mig --create-only` to generate migration file
+3. Run `npx prisma generate` to update client+typescript (update types but not actual datastore)
+4. Run `npx prisma migrate deploy` to apply migration to actual data store (does not update types)
 
-To apply migration and update client+typescript, `npx prisma migrate deploy && npx prisma generate`
+To apply migration and update client+typescript, `npx prisma generate && npx prisma migrate deploy`
+
+To reverse changes when developing, just `prisma generate` again after deleting the migration, and don't `migrate deploy`

@@ -6,9 +6,7 @@
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
-    "db:migrate": "npx prisma migrate dev --name table_reset",
-    "db:generate": "npx prisma migrate deploy",
-    "db:push": "npx prisma db push",
+    "prisma": "npx prisma migrate dev --name mig --create-only && npx prisma generate && npx prisma migrate deploy",
     "db:studio": "npx prisma studio",
     "lint": "npx eslint .",
     "start": "next start",

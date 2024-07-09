@@ -34,8 +34,11 @@ export const postRouter = createTRPCRouter({
       for (const test of tmpTests) {
         await ctx.db.tmpTest.update({
           where: { id: test.id },
-          // @ts-expect-error willfix
-          data: { score: test.score != null ? test.score - 1 : null },
+
+          data: {
+            myNewField:
+              "asdf" /* test.myNewField != null ? test.myNewField - 1 : null */,
+          },
         });
       }
 

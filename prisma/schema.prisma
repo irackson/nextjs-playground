@@ -94,6 +94,7 @@ model TmpTest {
     // Demonstrating relation
     createdBy   User?   @relation(fields: [createdById], references: [id])
     createdById String?
+    myNewField  String?
 
     // Indexing
     @@index([name])
