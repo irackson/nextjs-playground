@@ -21,7 +21,7 @@
     "@emotion/styled": "^11.11.5",
     "@faker-js/faker": "^8.4.1",
     "@mui/icons-material": "^5.15.20",
-    "@mui/material": "^5.15.20",
+    "@mui/material": "^5.16.6",
     "@next/bundle-analyzer": "^14.2.4",
     "@prisma/client": "^5.16.1",
     "@t3-oss/env-nextjs": "^0.10.1",
