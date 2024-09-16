@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "npx prisma generate && next build",
     "prisma": "npx prisma migrate dev --name mig --create-only && npx prisma generate && npx prisma migrate deploy",
     "db:studio": "npx prisma studio",
