@@ -4,7 +4,6 @@ import * as React from "react";
 import { useSession } from "next-auth/react";
 import { Box } from "@mui/material";
 import { NavContext } from "../Context/NavContext";
-import { SnackbarProvider } from "../Context/SnackbarContext";
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -34,33 +33,19 @@ export function NavLayout(props: LayoutProps) {
             setAdminMode,
           }}
         >
-          <SnackbarProvider>
-            <Box
-              component="main"
-              sx={{
-                minHeight: "100vh",
-                overflowY: "auto",
-                overflowX: "hidden",
-                webkitScrollbar: {
-                  width: "0.4em",
-                },
-                "&::-webkit-scrollbar": {
-                  width: "0.4em",
-                },
-                "&::-webkit-scrollbar-track": {
-                  background: "#f1f1f1",
-                },
-                "&::-webkit-scrollbar-thumb": {
-                  backgroundColor: "#888",
-                },
-                "&::-webkit-scrollbar-thumb:hover": {
-                  background: "#555",
-                },
-              }}
-            >
-              {props.children || null}
-            </Box>
-          </SnackbarProvider>
+          <Box
+            component="main"
+            sx={{
+              minHeight: "100vh",
+              overflowY: "auto",
+              overflowX: "hidden",
+              webkitScrollbar: {
+                width: "0.4em",
+              },
+            }}
+          >
+            {props.children || null}
+          </Box>
         </NavContext.Provider>
       </Box>
     </Box>
