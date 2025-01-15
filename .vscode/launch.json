@@ -1,34 +1,52 @@
 {
 	"version": "0.2.0",
-	"configurations": [
+	"compounds": [
 		{
 			"name": "DEBUG",
-			"type": "node-terminal",
+			"configurations": [
+				"START_NODE",
+				"OPEN_CHROME"
+			],
+			"stopAll": true,
+			"preLaunchTask": "FOCUS_DEBUG_CONSOLE"
+		}
+	],
+	"configurations": [
+		{
+			"name": "START_NODE",
+			"type": "node",
 			"request": "launch",
-			"command": "npm run dev",
+			"program": "${workspaceFolder}/node_modules/.bin/next",
+			"runtimeArgs": [
+				"--inspect"
+			],
+			"runtimeExecutable": "/Users/homedeveloper/.nvm/versions/node/v21.7.2/bin/node",
+			"skipFiles": [
+				"node_modules/**",
+				"**/_next/**",
+				"**/build/proxy.js"
+			],
 			"serverReadyAction": {
-				"pattern": "- Local:.+(https?://.+)",
 				"action": "startDebugging",
 				"name": "OPEN_CHROME",
+				"pattern": "- Local:.+(https?://.+)",
+				"killOnServerStop": true
 			},
 			"trace": false,
 			"sourceMaps": true,
 			"smartStep": true,
-			"skipFiles": [
-				"node_modules/**"
-			],
-			"postDebugTask": "KILL_CHROME"
 		},
 		{
 			"name": "OPEN_CHROME",
 			"type": "chrome",
 			"request": "launch",
-			"url": "http://localhost:3000",
+			"url": "http://localhost:3000/configurations/portals",
 			"webRoot": "${workspaceFolder}",
+			"userDataDir": "${workspaceFolder}/chrome-debug-profile",
 			"runtimeArgs": [
+				"--remote-debugging-port=9222",
 				"--disable-session-restore",
 				"--profile-directory=Debug",
-				"--user-data-dir=${workspaceFolder}/chrome-debug-profile",
 				"--no-first-run",
 				"--new-window"
 			],
@@ -36,9 +54,10 @@
 			"sourceMaps": true,
 			"smartStep": true,
 			"skipFiles": [
-				"node_modules/**"
+				"node_modules/**",
+				"**/_next/**",
+				"**/build/proxy.js",
 			],
-			"postDebugTask": "KILL_CHROME"
-		},
+		}
 	],
 }
