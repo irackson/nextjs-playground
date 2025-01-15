@@ -17,4 +17,4 @@ To set up a NEW database, run `npx prisma migrate deploy` (runs through all migr
 
 To apply migration and update client+typescript, `npx prisma generate && npx prisma migrate deploy`
 
-To reverse changes when developing, just `prisma generate` again after deleting the migration, and don't `migrate deploy`
+To reverse changes when developing, just `prisma generate` again after deleting the migration, and don't `migrate deploy`!
