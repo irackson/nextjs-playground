@@ -1,5 +1,7 @@
 # [PROD URL](https://nextjs-playground-rho-six.vercel.app/)
 
+[Emergency hotfix entry and release checks](EMERGENCY-HOTFIX.md): real build, explicit provenance/rollback and deferred full tests; ordinary pushes unchanged.
+
 ## DEPLOYMENT DETAILS
 
 > TODO add details
