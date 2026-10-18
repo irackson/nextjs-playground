@@ -29,6 +29,7 @@ export function prepareEmergency(inputPath,receiptPath) {
  writeFileSync(receiptPath,JSON.stringify(receipt,null,2)+'\n',{flag:'wx'});return receipt;
 }
 if(process.argv[1]===fileURLToPath(import.meta.url)) {
- if(process.argv.length!==4)console.log('Usage: node scripts/prepare-emergency.mjs PRIVATE_INPUT_JSON NEW_RECEIPT_PATH (local build only; no deploy)');
- else console.log(JSON.stringify(prepareEmergency(resolve(process.argv[2]),resolve(process.argv[3]))));
+ const input=process.argv[2],receipt=process.argv[3];
+ if(process.argv.length!==4 || typeof input!=='string' || typeof receipt!=='string')console.log('Usage: node scripts/prepare-emergency.mjs PRIVATE_INPUT_JSON NEW_RECEIPT_PATH (local build only; no deploy)');
+ else console.log(JSON.stringify(prepareEmergency(resolve(input),resolve(receipt))));
 }
